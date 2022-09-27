@@ -62,7 +62,7 @@ function M.provider.lsp_progress()
   return Lsp
       and string.format(
         " %%<%s %s %s (%s%%%%) ",
-        ((Lsp.percentage or 0) >= 70 and { "", "", "" } or { "", "", "" })[math.floor(
+          ((Lsp.percentage or 0) >= 70 and { "", "", "" } or { "", "", "" })[math.floor(
           vim.loop.hrtime() / 12e7
         ) % 3 + 1],
         Lsp.title or "",
@@ -95,6 +95,10 @@ end
 function M.provider.treesitter_status()
   local ts_avail, ts = pcall(require, "nvim-treesitter.parsers")
   return (ts_avail and ts.has_parser()) and " 綠TS" or ""
+end
+
+function M.provider.cat_status()
+  return " 🐱👓 MEOW"
 end
 
 function M.provider.spacer(n) return string.rep(" ", n or 1) end

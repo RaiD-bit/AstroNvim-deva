@@ -12,6 +12,7 @@ feline.setup(astronvim.user_plugin_opts("plugins.feline", {
     active = {
       {
         { provider = provider.spacer(), hl = hl.mode() },
+        { provider = provider.cat_status, enabled = conditional.bar_width(), hl = hl.fg("Constant", { fg = C.yellow_1 }) },
         { provider = provider.spacer(2) },
         { provider = "git_branch", hl = hl.fg("Conditional", { fg = C.purple_1, style = "bold" }), icon = " " },
         { provider = provider.spacer(3), enabled = conditional.git_available },
