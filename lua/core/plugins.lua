@@ -2,6 +2,15 @@ local astro_plugins = {
   -- Plugin manager
   ["wbthomason/packer.nvim"] = {},
 
+  ["akinsho/flutter-tools.nvim"] = {
+    config = function() require "configs.flutter-tool" end,
+  },
+
+
+  ["folke/todo-comments.nvim"] = {
+    config = function() require "configs.todo-config" end,
+  },
+
   -- Optimiser
   ["lewis6991/impatient.nvim"] = {},
 
@@ -273,6 +282,16 @@ local astro_plugins = {
     event = "BufWritePost",
     config = function() require "configs.session_manager" end,
   },
+  -- debugging
+   ["mfussenegger/nvim-dap"] = {
+    config = function() require "configs.nvim-dap" end,
+  },
+
+   ["rcarriga/nvim-dap-ui"] = {
+    config = function() require "configs.nvim-dap-ui" end,
+  },
+
+
 }
 
 if astronvim.updater.snapshot then
